@@ -4,4 +4,4 @@ HA9  XS app
 Build a Basic SAP HANA XS Advanced Application
   - Connect to Web IDE and Clone a Git Repository to create a Multi-Target Application  OK
   - Create your first HTML5 module for HTML5 content within your XSA application        Pending UAA 
-  - Create your first HDI module for database content within your XSA application
+  - Create your first HDI module for database content within your XSA application       OK

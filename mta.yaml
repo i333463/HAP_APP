@@ -6,3 +6,19 @@ modules:
  - name: web
    type: html5
    path: web
+
+ - name: hdb
+   type: hdb
+   path: hdb
+   requires:
+    - name: hdi_hdb
+
+
+resources:
+ - name: hdi_hdb
+   parameters:
+      config:
+         schema: HDB
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container

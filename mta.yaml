@@ -1,24 +1,41 @@
 ID: HAP_APP
 _schema-version: '2.1'
 version: 0.0.1
-
 modules:
- - name: web
-   type: html5
-   path: web
-
- - name: hdb
-   type: hdb
-   path: hdb
-   requires:
-    - name: hdi_hdb
-
-
+  - name: web
+    type: html5
+    path: web
+    requires:
+      - name: UAA-service
+      - name: core_xsjs_api
+        group: destinations
+        properties:
+          name: core-xsjs-backend
+          url: '~{url}'
+          forwardAuthToken: true
+  - name: hdb
+    type: hdb
+    path: hdb
+    requires:
+      - name: hdi_hdb
+  - name: core_xsjs
+    type: nodejs
+    path: core_xsjs
+    provides:
+      - name: core_xsjs_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdb
 resources:
- - name: hdi_hdb
-   parameters:
+  - name: UAA-service
+    type: com.sap.xs.uaa-space
+    parameters:
+      config-path: ./xs-security.json
+  - name: hdi_hdb
+    parameters:
       config:
-         schema: HDB
-   properties:
-      hdi-container-name: ${service-name}
-   type: com.sap.xs.hdi-container
+        schema: HDB
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container

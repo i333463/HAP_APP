@@ -27,6 +27,8 @@ modules:
           url: '${default-url}'
     requires:
       - name: hdb
+      - name: UAA-service
+      - name: hdi_hdb
 resources:
   - name: UAA-service
     type: com.sap.xs.uaa-space

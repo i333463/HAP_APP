@@ -6,4 +6,4 @@ Build a Basic SAP HANA XS Advanced Application
   - Create your first HTML5 module for HTML5 content within your XSA application        OK
   - Create your first HDI module for database content within your XSA application       OK
   - Create a Node.js module to expose an OData service                                  OK
-  - Consume the OData service in a basic HTML5 module
+  - Consume the OData service in a basic HTML5 module                                   OK
